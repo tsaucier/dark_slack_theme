@@ -1,6 +1,6 @@
 $VersionPath = "C:\Users\$env:UserName\AppData\Local\slack\app-*"
-$JsPath = "\resources\app.asar.unpacked\src\static\ssb-interop.js"
 $PathContent = Get-ChildItem $VersionPath -Recurse | Where-Object { $_.PSIsContainer } | Sort-Object LastWriteTime | Select-Object -last 1
+$JsPath = "\resources\app.asar.unpacked\src\static\ssb-interop.js"
 $FullPath = "$($PathContent)" + "$($JsPath)"
 $FileExists = Test-Path $FullPath
 $NightModeId = "slack-night-mode"
